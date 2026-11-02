@@ -1,0 +1,423 @@
+@charset "UTF-8";
+
+/* --- VARIABLES DE COLOR Y TIPOGRAFÍA --- */
+:root {
+    --color-oscuro: #000000;
+    --color-terracota: #A25652;
+    --color-verde-oliva: #ADA486;
+    --color-tierra: #8B7666;
+    --color-fondo: #F4F1EA; /* Tono crema base extraído de la interfaz */
+    
+    --fuente-titulos: 'Chivo', sans-serif;
+    --fuente-cuerpo: Arial, sans-serif; /* Reemplazar por Leluja si se importa localmente */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-oscuro);
+}
+
+/* --- HEADER GENERAL --- */
+header.general {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: var(--color-fondo); /* Tono crema institucional */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid rgba(139, 118, 102, 0.2);
+}
+
+/* Logo */
+.img_logo .logo-temaiken {
+    height: 40px; /* Ajusta según el tamaño de tu archivo de imagen */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Menú de Navegación Central */
+.nav-principal ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-principal ul li a {
+    text-decoration: none;
+    color: var(--color-oscuro);
+    font-family: var(--fuente-titulos);
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.nav-principal ul li a:hover {
+    color: var(--color-terracota);
+}
+
+/* Caja de Búsqueda de la Derecha */
+.input_busqueda {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-tierra); /* Color tierra de la barra en el diseño */
+    border-radius: 20px;
+    padding: 8px 16px;
+    width: 220px;
+    height: 38px;
+}
+
+.input_busqueda .icono-lupa {
+    font-size: 14px;
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+.input_busqueda input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: var(--fuente-cuerpo);
+    font-size: 14px;
+    width: 100%;
+}
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-terracota);
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero h5 {
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-oscuro);
+    font-size: 16px;
+    max-width: 500px;
+    margin-bottom: 25px;
+}
+
+.boton, .btn-card, .button {
+    display: inline-block;
+    background-color: var(--color-terracota);
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-family: var(--fuente-titulos);
+    border-radius: 4px;
+    text-align: center;
+    width: fit-content;
+}
+
+/* --- SECCIÓN PROTAGONISTAS (Galería Grid / Flexbox) --- */
+#protagonistas {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+#protagonistas h2 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-terracota);
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.galeria-protagonistas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-protagonistas img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid var(--color-tierra);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--color-tierra);
+    color: #ffffff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .legales {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer .legales a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+}
+/* --- SECCIÓN ¿CÓMO LLEGAR? --- */
+.como-llegar {
+    padding: 60px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.como-llegar h2 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-terracota);
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* Contenedor principal en dos columnas (Mapa a la izquierda, Info a la derecha) */
+.como-llegar .informacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    background-color: rgba(255, 255, 255, 0.4); /* Sutil fondo de tarjeta */
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--color-tierra);
+}
+
+/* Columna del Mapa */
+.mapa-contenedor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.img_mapa {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid var(--color-tierra);
+    object-fit: cover;
+}
+
+/* Botón de Google Maps debajo del mapa */
+.mapa-contenedor .button {
+    background-color: var(--color-terracota);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: var(--fuente-titulos);
+    font-size: 14px;
+    border-radius: 6px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.mapa-contenedor .button:hover {
+    background-color: #824340;
+}
+
+/* Columna de Texto y Detalles */
+.detalles-llegada {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detalles-llegada h3, 
+.detalles-llegada h4 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-terracota);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.detalles-llegada p {
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-oscuro);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Ilustraciones de Medios de Transporte (Autos/Colectivos) */
+.ilustraciones {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.ilustraciones img {
+    width: 55px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* --- TARJETAS DE NAVEGACIÓN RÁPIDA (Horarios, Bioparque, Accesibilidad) --- */
+.cards-tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 80px 60px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cards-tarjetas .card {
+    background-color: #EAE3D2; /* Tono crema/tierra claro de las tarjetas en Figma */
+    border: 2px solid var(--color-tierra);
+    border-radius: 16px;
+    padding: 30px 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.cards-tarjetas .card h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-terracota);
+    font-size: 20px;
+}
+
+.cards-tarjetas .card p {
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-oscuro);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.btn-card {
+    background-color: var(--color-terracota);
+    color: #ffffff;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-family: var(--fuente-titulos);
+    font-size: 13px;
+    border-radius: 4px;
+    text-align: center;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.btn-card:hover {
+    background-color: #824340;
+}
+/* --- FOOTER GENERAL --- */
+footer {
+    background-color: #D6CEBE; /* Color de fondo tierra claro del footer en Figma */
+    border-top: 2px solid var(--color-tierra);
+    padding: 40px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: var(--color-oscuro);
+}
+
+/* Fila Superior */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(139, 118, 102, 0.4); /* Línea divisoria sutil */
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo-asociacion {
+    height: 35px; /* Ajusta la altura según tus archivos de imagen */
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-copyright p {
+    font-family: var(--fuente-cuerpo);
+    font-size: 13px;
+    color: var(--color-oscuro);
+    letter-spacing: 0.5px;
+}
+
+/* Fila Inferior */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-nav a {
+    font-family: var(--fuente-titulos);
+    font-size: 13px;
+    color: var(--color-oscuro);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--color-terracota);
+}
+
+/* Redes Sociales */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: var(--color-oscuro);
+    text-decoration: none;
+    font-size: 16px;
+}
